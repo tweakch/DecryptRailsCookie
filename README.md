@@ -1,13 +1,16 @@
 # DecryptRailsCookie
 
 ## Introduction
+
 DecryptRailsCookie is a simple Ruby script designed to decrypt Rails session cookies. This guide will help you set up and run the script.
 
 ## Prerequisites
+
 - Ruby environment.
 - Rails application with an encrypted cookie to decrypt.
 
 ## Setup
+
 1. **Clone the Repository**: Clone this repository to your local machine.
    ```bash
    git clone https://github.com/tweakch/DecryptRailsCookie.git
@@ -20,6 +23,7 @@ DecryptRailsCookie is a simple Ruby script designed to decrypt Rails session coo
    ```
 
 ## Usage
+
 1. **Set Cookie and Secret**: Open `main.rb` and replace `<your_cookie>` and `<your_secret>` with your encrypted cookie and secret key base respectively.
 
 2. **Run the Script**: Execute the script in your terminal.
@@ -28,6 +32,7 @@ DecryptRailsCookie is a simple Ruby script designed to decrypt Rails session coo
    ```
 
 ## Output
+
 The script will output the decrypted content of the Rails session cookie.
 
 ## Parameters
@@ -48,9 +53,8 @@ The script will output the decrypted content of the Rails session cookie.
 
 This is your encrypted Rails session cookie. Copy its value for use with the DecryptRailsCookie script.
 
-## Locating the Secret Key Base
+### Finding Your Rails Application's Secret Key Base
 
-### Finding Your Rails Application's Secret Key Base:
 1. **Access Your Rails Application's Code**: Open the source code of your Rails application.
 
 2. **Locate the Secrets File**: The secret key base is typically stored in one of these files:
@@ -65,9 +69,8 @@ This is your encrypted Rails session cookie. Copy its value for use with the Dec
 
 Copy the `secret_key_base` for use with the DecryptRailsCookie script. Keep this information secure.
 
-## Configuring Salt and Signed Salt
+### Understanding and Setting Salt Values
 
-### Understanding and Setting Salt Values:
 1. **Purpose of Salt and Signed Salt**: 
    - `salt`: Used in generating the encryption key.
    - `signed_salt`: Used in generating the signing key for the cookie.
