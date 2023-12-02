@@ -30,7 +30,7 @@ DecryptRailsCookie is a simple Ruby script designed to decrypt Rails session coo
 ## Output
 The script will output the decrypted content of the Rails session cookie.
 
-## Locating the Session Cookie
+## Parameters
 
 ### Finding Your Rails Session Cookie:
 1. **Access Your Rails Application**: Open your Rails application in a web browser.
@@ -47,6 +47,23 @@ The script will output the decrypted content of the Rails session cookie.
    - Find the cookie named something similar to `_yourapp_session`.
 
 This is your encrypted Rails session cookie. Copy its value for use with the DecryptRailsCookie script.
+
+## Locating the Secret Key Base
+
+### Finding Your Rails Application's Secret Key Base:
+1. **Access Your Rails Application's Code**: Open the source code of your Rails application.
+
+2. **Locate the Secrets File**: The secret key base is typically stored in one of these files:
+   - `config/secrets.yml`
+   - `config/credentials.yml.enc` (for Rails 5.2 and later)
+   - Environment variables
+
+3. **Extract the Secret Key Base**:
+   - If in `secrets.yml`, look for a line like `secret_key_base:`.
+   - If using `credentials.yml.enc`, run `rails credentials:edit` to view the file.
+   - If stored in environment variables, it will typically be named `SECRET_KEY_BASE`.
+
+Copy the `secret_key_base` for use with the DecryptRailsCookie script. Keep this information secure.
 
 ## Note
 Ensure the secret key base matches the one used by your Rails application for the encrypted cookie. Use environment variables or other secure methods to
