@@ -65,5 +65,22 @@ This is your encrypted Rails session cookie. Copy its value for use with the Dec
 
 Copy the `secret_key_base` for use with the DecryptRailsCookie script. Keep this information secure.
 
+## Configuring Salt and Signed Salt
+
+### Understanding and Setting Salt Values:
+1. **Purpose of Salt and Signed Salt**: 
+   - `salt`: Used in generating the encryption key.
+   - `signed_salt`: Used in generating the signing key for the cookie.
+
+2. **Default Rails Configuration**:
+   - Typically, Rails uses default values for these salts.
+   - Default values are `"encrypted cookie"` for `salt` and `"signed encrypted cookie"` for `signed_salt`.
+
+3. **Custom Configuration**:
+   - If your Rails application uses custom salt values, you need to replace the default values in the script.
+   - Find these values in your Rails application, possibly within the initializers or the environment configuration files.
+
+Ensure that the `salt` and `signed_salt` in the script match the ones used by your Rails application for accurate decryption.
+
 ## Note
 Ensure the secret key base matches the one used by your Rails application for the encrypted cookie. Use environment variables or other secure methods to
